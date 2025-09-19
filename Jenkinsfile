@@ -3,14 +3,14 @@ pipeline{
     stages{
         stage('checkout the code from github'){
             steps{
-                 git url: 'https://github.com/akshu20791/Banking-java-project/'
+                 git url: 'https://github.com/Faiz0603/pro6/'
                  echo 'github url checkout'
             }
         }
         stage('codecompile with akshat'){
             steps{
                 echo 'starting compiling'
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
         stage('codetesting with akshat'){
@@ -25,7 +25,7 @@ pipeline{
         }
         stage('package with akshat'){
             steps{
-                sh 'mvn package'
+                sh 'mvn install package'
             }
         }
         stage('run dockerfile'){
@@ -40,3 +40,4 @@ pipeline{
         }   
     }
 }
+
